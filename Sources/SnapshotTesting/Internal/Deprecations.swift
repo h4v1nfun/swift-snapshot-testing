@@ -400,7 +400,7 @@ public func verifySnapshot<Value, Format>(
   as snapshotting: Snapshotting<Value, Format>,
   named name: String? = nil,
   record recording: Bool? = nil,
-  snapshotDirectory: String? = nil,
+  snapshotDirectory: URL? = nil,
   timeout: TimeInterval = 5,
   file: StaticString = #file,
   testName: String = #function,

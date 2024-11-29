@@ -277,7 +277,7 @@ public func verifySnapshot<Value, Format>(
   as snapshotting: Snapshotting<Value, Format>,
   named name: String? = nil,
   record recording: Bool? = nil,
-  snapshotDirectory: String? = nil,
+  snapshotDirectory: URL? = nil,
   timeout: TimeInterval = 5,
   fileID: StaticString = #fileID,
   file filePath: StaticString = #file,
@@ -297,7 +297,7 @@ public func verifySnapshot<Value, Format>(
       let fileName = fileUrl.deletingPathExtension().lastPathComponent
 
       let snapshotDirectoryUrl =
-        snapshotDirectory.map { URL(fileURLWithPath: $0, isDirectory: true) }
+      snapshotDirectory.map { URL(fileURLWithPath: $0.absoluteString, isDirectory: true) }
         ?? fileUrl
         .deletingLastPathComponent()
         .appendingPathComponent("__Snapshots__")
