@@ -297,7 +297,7 @@ public func verifySnapshot<Value, Format>(
       let fileName = fileUrl.deletingPathExtension().lastPathComponent
 
       let snapshotDirectoryUrl =
-      snapshotDirectory.map { URL(fileURLWithPath: $0.absoluteString, isDirectory: true) }
+      snapshotDirectory.map { URL(fileURLWithPath: $0.path, isDirectory: true) }
         ?? fileUrl
         .deletingLastPathComponent()
         .appendingPathComponent("__Snapshots__")
